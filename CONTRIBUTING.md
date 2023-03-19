@@ -1,16 +1,19 @@
 # Contributing to ROCm Docs
 
-The value of documentation being open-source is that it is open for contribution to all. We encourage everyone to contribute: if something was unclear to you, it may be unclear to others too. If you know some piece of information made sense being mentioned at a given point, add a link or excerpt. Don't know how to address a shortcoming you sense: open an issue. Community-driven documentation will surely tailor to a wider audience than those written centrally.
+AMD values and encourages the ROCm community to contribute to our code and documentation. This repository is focused on ROCm documentation and this contribution guide describes the recommend method for creating and modifying our documentation.
 
-Be polite and respectful in your contributions, content or otherwise. Authors, maintainers of these docs act on good intentions and to the best of their knowledge. Keep that in mind while you engage. Should you have issues with contributing itself, refer to [discussions](https://github.com/RadeonOpenCompute/ROCm/discussions) on the GitHub repository.
+While interacting with ROCm Documentation, we encourage you to be polite and respectful in your contributions, content or otherwise. Authors, maintainers of these docs act on good intentions and to the best of their knowledge. Keep that in mind while you engage. Should you have issues with contributing itself, refer to [discussions](https://github.com/RadeonOpenCompute/ROCm/discussions) on the GitHub repository.
 
-## Guidelines on format
+## Format and Contribution Guidelines
 
-This documentation strives to follow the [Writing Markdown on GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github) guidelines. Additionally, there are ROCm-specific style guides helping to maintain a unified look and feel of the resulting documents.
+Our documentation supports both markdown and rst files. Markdown is encouraged over rst due to lower barrier to participation. Sphinx supports the [MyST](https://myst-parser.readthedocs.io/en/latest/intro.html) flavor of markdown. That is the preferred standard for markdown for ROCm documentation. We accept GitHub flavored markdown as well. Please see [GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github)'s guide on writing and formatting on GitHub as a starting point.
 
-While there isn't a comprehensive set of style guides yet, here's a non-exhaustive list to keep in mind to reduce friction while contributing:
+ROCm documentation adds additional requirements to markdown and rst based files as follows: 
 
-- Following the title, use one level of header nesting for describing content structure for both Markdown and Restructured Text.
+- Level one headers are only used for page titles. There must be only one level 1 header per file for both Markdown and Restructured Text.
+- Pass [markdownlint](https://github.com/markdownlint/markdownlint) check via our automated github action on a Pull Request (PR).
+
+All contributions to ROCm documentation should arrive via the [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) targetting the develop branch of the repository. If you are unable to contribute via the GitHub Flow, feel free to email us. TODO, confirm email address.
 
 ## Build the docs using VS Code
 
