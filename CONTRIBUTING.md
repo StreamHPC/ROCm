@@ -4,7 +4,7 @@ AMD values and encourages the ROCm community to contribute to our code and docum
 
 While interacting with ROCm Documentation, we encourage you to be polite and respectful in your contributions, content or otherwise. Authors, maintainers of these docs act on good intentions and to the best of their knowledge. Keep that in mind while you engage. Should you have issues with contributing itself, refer to [discussions](https://github.com/RadeonOpenCompute/ROCm/discussions) on the GitHub repository.
 
-## Format and Contribution Guidelines
+## Supported Formats
 
 Our documentation supports both markdown and rst files. Markdown is encouraged over rst due to lower barrier to participation. Sphinx supports the [MyST](https://myst-parser.readthedocs.io/en/latest/intro.html) flavor of markdown. That is the preferred standard for markdown for ROCm documentation. We accept GitHub flavored markdown as well. Please see [GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github)'s guide on writing and formatting on GitHub as a starting point.
 
@@ -13,13 +13,32 @@ ROCm documentation adds additional requirements to markdown and rst based files 
 - Level one headers are only used for page titles. There must be only one level 1 header per file for both Markdown and Restructured Text.
 - Pass [markdownlint](https://github.com/markdownlint/markdownlint) check via our automated github action on a Pull Request (PR).
 
+## How to submit your change request?
+### Pull Request
 All contributions to ROCm documentation should arrive via the [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow) targetting the develop branch of the repository. If you are unable to contribute via the GitHub Flow, feel free to email us. TODO, confirm email address.
 
-## Build the docs using VS Code
+### GitHub Issue
+
+### Email Feedback
+
+## Language and Style
+Adopting Microsoft CPP-Docs guidelines for [Voice and Tone](https://github.com/MicrosoftDocs/cpp-docs/blob/main/styleguide/voice-tone.md).
+
+ROCm documentation templates to be made public shortly. ROCm templates dictate the recommended structure and flow of the documentation. Guidelines on how to integrate figures, equations, and tables are all based off [MyST](https://myst-parser.readthedocs.io/en/latest/intro.html).
+
+Font size and selection, page layout, white space control, and other formatting details are controlled via rocm-docs-core, sphinx extention. Please raise issues in rocm-docs-core for any formatting concerns and changes requested.
+
+## Building Documentation
+
+### Command line documentation builds
+
+### Pull Requests documentation builds
+
+### Build the docs using VS Code
 
 One can put together a productive environment to author documentation and also test it locally using VS Code with only a handful of extensions. Even though the extension landscape of VS Code is ever changing, here is one example setup that proved useful at the time of writing. In it, one can change/add content, build a new version of the docs using a single VS Code Task (or hotkey), see all errors/warnings emitted by Sphinx in the Problems pane and immediately see the resulting website show up on a locally serving web server.
 
-### Configuring VS Code
+#### Configuring VS Code
 
 1. Install the following extensions:
 
