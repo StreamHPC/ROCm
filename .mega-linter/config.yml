@@ -1,0 +1,15 @@
+# Don't fix files, just report
+APPLY_FIXES: none
+
+# List applied linters
+ENABLE_LINTERS:
+  - MARKDOWN_MARKDOWNLINT
+  - RST_RST_LINT
+
+# Print time taken to lint
+SHOW_ELAPSED_TIME: true
+
+# Configure Markdown linting
+MARKDOWN_DEFAULT_STYLE: markdownlint
+MARKDOWN_FILTER_REGEX_EXCLUDE: ""
+MARKDOWN_MARKDOWNLINT_CONFIG_FILE: .mega-linter/rules/markdownlint.jsonc
