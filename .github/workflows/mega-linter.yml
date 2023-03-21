@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-      - name: Run MegaLinter
-        uses: oxsecurity/megalinter@v6
-        env:
-          MEGALINTER_CONFIG: ${{ join(github.workspace, '/.mega-linter/config.yml') }}
+      - name: Install rst-lint
+        run: pip install restructuredtext-lint
+      - name: Lint ResT files
+        run: rst-lint ${{ join(github.workspace, '/docs') }}
