@@ -296,9 +296,6 @@ communicators repeatedly, subsequent communicators may fail to initialize.
 
 This issue is under investigation and will be resolved in a future release.
 
-#### Failures In HIP Directed Tests
-
-Multiple HIP directed tests fail.
 
 ### Library Changes in ROCM 5.5.0
 
