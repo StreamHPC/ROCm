@@ -33,16 +33,16 @@ ROCm supports virtualization for select GPUs only as shown below.
 
 Use Driver Shipped with ROCm
 
-| Name | Architecture | [LLVM Target](https://www.llvm.org/docs/AMDGPUUsage.html#processors) | SWE | Support |
-|:----:|:------------:|:--------------------------------------------------------------------:|:---:|:-------:|
-| AMD Instinct™ MI250X | CDNA2  | gfx90a | Full | Supported   |
-| AMD Instinct™ MI250  | CDNA2  | gfx90a | Full | Supported   |
-| AMD Instinct™ MI210  | CDNA2  | gfx90a | Full | Supported   |
-| AMD Instinct™ MI100  | CDNA   | gfx908 | Full | Supported   |
-| AMD Instinct™ MI50   | GCN5.1 | gfx906 | Full | Supported   |
-| AMD Instinct™ MI25   | GCN5.0 | gfx900 | Full | Deprecated  |
-| AMD Instinct™ MI6    | GCN4.0 | gfx803 | Full | Unsupported |
-| AMD Instinct™ MI8    | GCN3.0 | gfx803 | Full | Unsupported |
+| Product Name | Chip Name | PCI ID | Architecture | [LLVM Target](https://www.llvm.org/docs/AMDGPUUsage.html#processors) | SWE | Support |
+|:------------:|:---------:|:------:|:------------:|:--------------------------------------------------------------------:|:---:|:-------:|
+| AMD Instinct™ MI250X | Aldebaran XT   | 7408 | CDNA2  | gfx90a | Full | ✅ |
+| AMD Instinct™ MI250  | Aldebaran      | 740C | CDNA2  | gfx90a | Full | ✅ |
+| AMD Instinct™ MI210  | Aldebaran      | 740F | CDNA2  | gfx90a | Full | ✅ |
+| AMD Instinct™ MI100  | Arcturus GL-XL | 738C | CDNA   | gfx908 | Full | ✅ |
+| AMD Instinct™ MI50   | Vega 20 GLXT   | 66A1 | GCN5.1 | gfx906 | Full | ✅ |
+| AMD Instinct™ MI25   | Vega 10 XT GL  | 6860 | GCN5.0 | gfx900 | N/A  | ❌ |
+| AMD Instinct™ MI6    | Ellesmere XT   |      | GCN4.0 | gfx803 | N/A  | ❌ |
+| AMD Instinct™ MI8    | Fiji XT CA     |      | GCN3.0 | gfx803 | N/A  | ❌ |
 
 :::
 
@@ -53,25 +53,25 @@ Use Driver Shipped with ROCm
 
 | Name | Architecture | [LLVM Target](https://www.llvm.org/docs/AMDGPUUsage.html#processors) | SWE | Support |
 |:----:|:------------:|:--------------------------------------------------------------------:|:---:|:-------:|
-| AMD Radeon™ Pro W7900   | RDNA3  | gfx1100 | Full    | Supported  |
-| AMD Radeon™ Pro W7800   | RDNA3  | gfx1100 | Full    | Supported  |
-| AMD Radeon™ Pro W6800   | RDNA2  | gfx1030 | SDK     | Supported  |
-| AMD Radeon™ Pro V620    | RDNA2  | gfx1030 | SDK     | Supported  |
-| AMD Radeon™ Pro W6600   | RDNA2  | gfx1032 | Runtime | Supported  |
-| AMD Radeon™ Pro W6600M  | RDNA2  | gfx1032 | Runtime | Supported  |
-| AMD Radeon™ Pro W6400   | RDNA2  | gfx1034 | Runtime | Supported  |
-| AMD Radeon™ Pro W6300   | RDNA2  | gfx1034 | Runtime | Supported  |
-| AMD Radeon™ Pro W6300M  | RDNA2  | gfx1034 | Runtime | Supported  |
-| AMD Radeon™ Pro W5700   | RDNA1  | gfx1010 | Runtime | Supported  |
-| AMD Radeon™ Pro V520    | RDNA1  | gfx1011 | Runtime | Supported  |
-| AMD Radeon™ Pro W5500   | RDNA1  | gfx1012 | Runtime | Supported  |
-| AMD Radeon™ Pro VII     | GCN5.1 | gfx906  | Full    | Supported  |
-| AMD Radeon™ Pro WX 8200 | GCN5.0 | gfx900  | Runtime | Deprecated |
-| AMD Radeon™ Pro WX 9100 | GCN5.0 | gfx900  | Runtime | Deprecated |
-| AMD Radeon™ Pro WX 8100 | GCN5.0 | gfx900  | Runtime | Deprecated |
-| AMD Radeon™ Pro Duo     | GCN4.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ Pro WX 7100 | GCN4.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ Pro WX 5100 | GCN4.0 | gfx803  | N/A     | Community  |
+| AMD Radeon™ Pro W7900   | RDNA3  | gfx1100 | Full    | ✅ |
+| AMD Radeon™ Pro W7800   | RDNA3  | gfx1100 | Full    | ✅ |
+| AMD Radeon™ Pro W6800   | RDNA2  | gfx1030 | SDK     | ✅ |
+| AMD Radeon™ Pro V620    | RDNA2  | gfx1030 | SDK     | ✅ |
+| AMD Radeon™ Pro W6600   | RDNA2  | gfx1032 | Runtime | ✅ |
+| AMD Radeon™ Pro W6600M  | RDNA2  | gfx1032 | Runtime | ✅ |
+| AMD Radeon™ Pro W6400   | RDNA2  | gfx1034 | Runtime | ✅ |
+| AMD Radeon™ Pro W6300   | RDNA2  | gfx1034 | Runtime | ✅ |
+| AMD Radeon™ Pro W6300M  | RDNA2  | gfx1034 | Runtime | ✅ |
+| AMD Radeon™ Pro W5700   | RDNA1  | gfx1010 | Runtime | ✅ |
+| AMD Radeon™ Pro V520    | RDNA1  | gfx1011 | Runtime | ✅ |
+| AMD Radeon™ Pro W5500   | RDNA1  | gfx1012 | Runtime | ✅ |
+| AMD Radeon™ Pro VII     | GCN5.1 | gfx906  | Full    | ✅ |
+| AMD Radeon™ Pro WX 8200 | GCN5.0 | gfx900  | Runtime | ⚠️ |
+| AMD Radeon™ Pro WX 9100 | GCN5.0 | gfx900  | Runtime | ⚠️ |
+| AMD Radeon™ Pro WX 8100 | GCN5.0 | gfx900  | Runtime | ⚠️ |
+| AMD Radeon™ Pro Duo     | GCN4.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ Pro WX 7100 | GCN4.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ Pro WX 5100 | GCN4.0 | gfx803  | N/A     | 🆓 |
 
 :::
 
@@ -82,65 +82,65 @@ Use Driver Shipped with ROCm
 
 | Name | Architecture | [LLVM Target](https://www.llvm.org/docs/AMDGPUUsage.html#processors) | SWE | Support |
 |:----:|:------------:|:--------------------------------------------------------------------:|:---:|:-------:|
-| AMD Radeon™ RX 7950 XTX | RDNA3  | gfx1100 | Runtime | Supported  |
-| AMD Radeon™ RX 7950 XT  | RDNA3  | gfx1100 | Runtime | Supported  |
-| AMD Radeon™ RX 7900 XTX | RDNA3  | gfx1100 | Runtime | Supported  |
-| AMD Radeon™ RX 7900 XT  | RDNA3  | gfx1100 | Runtime | Supported  |
-| AMD Radeon™ RX 7800 XT  | RDNA3  | gfx1101 | Runtime | Supported  |
-| AMD Radeon™ RX 7700 XT  | RDNA3  | gfx1102 | Runtime | Supported  |
-| AMD Radeon™ RX 7600 XT  | RDNA3  | gfx1102 | Runtime | Supported  |
-| AMD Radeon™ RX 7500 XT  | RDNA3  | gfx1102 | Runtime | Supported  |
-| AMD Radeon™ RX 7600M XT | RDNA3  | gfx1102 | Runtime | Supported  |
-| AMD Radeon™ RX 7600M    | RDNA3  | gfx1102 | Runtime | Supported  |
-| AMD Radeon™ RX 7700S    | RDNA3  | gfx1102 | Runtime | Supported  |
-| AMD Radeon™ RX 7600S    | RDNA3  | gfx1102 | Runtime | Supported  |
-| AMD Radeon™ RX 6950 XT  | RDNA2  | gfx1030 | Full    | Supported  |
-| AMD Radeon™ RX 6900 XTX | RDNA2  | gfx1030 | Full    | Supported  |
-| AMD Radeon™ RX 6900 XT  | RDNA2  | gfx1030 | Full    | Supported  |
-| AMD Radeon™ RX 6800 XT  | RDNA2  | gfx1030 | Full    | Supported  |
-| AMD Radeon™ RX 6800     | RDNA2  | gfx1030 | Full    | Supported  |
-| AMD Radeon™ RX 6750 XT  | RDNA2  | gfx1031 | Runtime | Supported  |
-| AMD Radeon™ RX 6700 XT  | RDNA2  | gfx1031 | Runtime | Supported  |
-| AMD Radeon™ RX 6700     | RDNA2  | gfx1031 | Runtime | Supported  |
-| AMD Radeon™ RX 6850M    | RDNA2  | gfx1031 | Runtime | Supported  |
-| AMD Radeon™ RX 6800M    | RDNA2  | gfx1031 | Runtime | Supported  |
-| AMD Radeon™ RX 6700M    | RDNA2  | gfx1031 | Runtime | Supported  |
-| AMD Radeon™ RX 6650 XT  | RDNA2  | gfx1032 | Runtime | Supported  |
-| AMD Radeon™ RX 6600 XT  | RDNA2  | gfx1032 | Runtime | Supported  |
-| AMD Radeon™ RX 6600     | RDNA2  | gfx1032 | Runtime | Supported  |
-| AMD Radeon™ RX 6650M XT | RDNA2  | gfx1032 | Runtime | Supported  |
-| AMD Radeon™ RX 6650M    | RDNA2  | gfx1032 | Runtime | Supported  |
-| AMD Radeon™ RX 6600M    | RDNA2  | gfx1032 | Runtime | Supported  |
-| AMD Radeon™ RX 6800S    | RDNA2  | gfx1032 | Runtime | Supported  |
-| AMD Radeon™ RX 6700S    | RDNA2  | gfx1032 | Runtime | Supported  |
-| AMD Radeon™ RX 6600S    | RDNA2  | gfx1032 | Runtime | Supported  |
-| AMD Radeon™ RX 6500 XT  | RDNA2  | gfx1034 | Runtime | Supported  |
-| AMD Radeon™ RX 6550S    | RDNA2  | gfx1034 | Runtime | Supported  |
-| AMD Radeon™ RX 6550M    | RDNA2  | gfx1034 | Runtime | Supported  |
-| AMD Radeon™ RX 6500M    | RDNA2  | gfx1034 | Runtime | Supported  |
-| AMD Radeon™ RX 6450M    | RDNA2  | gfx1034 | Runtime | Supported  |
-| AMD Radeon™ RX 6400     | RDNA2  | gfx1034 | Runtime | Supported  |
-| AMD Radeon™ RX 6300     | RDNA2  | gfx1034 | Runtime | Supported  |
-| AMD Radeon™ RX 5700 XT  | RDNA1  | gfx1010 | Runtime | Supported  |
-| AMD Radeon™ RX 5700     | RDNA1  | gfx1010 | Runtime | Supported  |
-| AMD Radeon™ RX 5600 XT  | RDNA1  | gfx1010 | Runtime | Supported  |
-| AMD Radeon™ RX 5500 XT  | RDNA1  | gfx1012 | Runtime | Supported  |
-| AMD Radeon™ VII         | GCN5.1 | gfx906  | Full    | Supported  |
-| AMD Radeon™ RX Vega 64  | GCN5.0 | gfx900  | Full    | Deprecated |
-| AMD Radeon™ RX Vega 45  | GCN5.0 | gfx900  | Full    | Deprecated |
-| AMD Radeon™ RX 590      | GCN4.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ RX 580      | GCN4.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ RX 580x     | GCN4.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ RX 570      | GCN4.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ RX 570X     | GCN4.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ RX 570 X2   | GCN4.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ RX 560 XT   | GCN4.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ RX 480      | GCN4.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ RX 470      | GCN4.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ R9 Fury     | GCN3.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ R9 Fury X   | GCN3.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ R9 Fury X2  | GCN3.0 | gfx803  | N/A     | Community  |
-| AMD Radeon™ R9 Nano     | GCN3.0 | gfx803  | N/A     | Community  |
+| AMD Radeon™ RX 7950 XTX | RDNA3  | gfx1100 | Full    | ✅ |
+| AMD Radeon™ RX 7950 XT  | RDNA3  | gfx1100 | Full    | ✅ |
+| AMD Radeon™ RX 7900 XTX | RDNA3  | gfx1100 | Full    | ✅ |
+| AMD Radeon™ RX 7900 XT  | RDNA3  | gfx1100 | Full    | ✅ |
+| AMD Radeon™ RX 7800 XT  | RDNA3  | gfx1101 | Runtime | ✅ |
+| AMD Radeon™ RX 7700 XT  | RDNA3  | gfx1102 | Runtime | ✅ |
+| AMD Radeon™ RX 7600 XT  | RDNA3  | gfx1102 | Runtime | ✅ |
+| AMD Radeon™ RX 7500 XT  | RDNA3  | gfx1102 | Runtime | ✅ |
+| AMD Radeon™ RX 7600M XT | RDNA3  | gfx1102 | Runtime | ✅ |
+| AMD Radeon™ RX 7600M    | RDNA3  | gfx1102 | Runtime | ✅ |
+| AMD Radeon™ RX 7700S    | RDNA3  | gfx1102 | Runtime | ✅ |
+| AMD Radeon™ RX 7600S    | RDNA3  | gfx1102 | Runtime | ✅ |
+| AMD Radeon™ RX 6950 XT  | RDNA2  | gfx1030 | SDK     | ✅ |
+| AMD Radeon™ RX 6900 XTX | RDNA2  | gfx1030 | SDK     | ✅ |
+| AMD Radeon™ RX 6900 XT  | RDNA2  | gfx1030 | SDK     | ✅ |
+| AMD Radeon™ RX 6800 XT  | RDNA2  | gfx1030 | SDK     | ✅ |
+| AMD Radeon™ RX 6800     | RDNA2  | gfx1030 | SDK     | ✅ |
+| AMD Radeon™ RX 6750 XT  | RDNA2  | gfx1031 | Runtime | ✅ |
+| AMD Radeon™ RX 6700 XT  | RDNA2  | gfx1031 | Runtime | ✅ |
+| AMD Radeon™ RX 6700     | RDNA2  | gfx1031 | Runtime | ✅ |
+| AMD Radeon™ RX 6850M    | RDNA2  | gfx1031 | Runtime | ✅ |
+| AMD Radeon™ RX 6800M    | RDNA2  | gfx1031 | Runtime | ✅ |
+| AMD Radeon™ RX 6700M    | RDNA2  | gfx1031 | Runtime | ✅ |
+| AMD Radeon™ RX 6650 XT  | RDNA2  | gfx1032 | Runtime | ✅ |
+| AMD Radeon™ RX 6600 XT  | RDNA2  | gfx1032 | Runtime | ✅ |
+| AMD Radeon™ RX 6600     | RDNA2  | gfx1032 | Runtime | ✅ |
+| AMD Radeon™ RX 6650M XT | RDNA2  | gfx1032 | Runtime | ✅ |
+| AMD Radeon™ RX 6650M    | RDNA2  | gfx1032 | Runtime | ✅ |
+| AMD Radeon™ RX 6600M    | RDNA2  | gfx1032 | Runtime | ✅ |
+| AMD Radeon™ RX 6800S    | RDNA2  | gfx1032 | Runtime | ✅ |
+| AMD Radeon™ RX 6700S    | RDNA2  | gfx1032 | Runtime | ✅ |
+| AMD Radeon™ RX 6600S    | RDNA2  | gfx1032 | Runtime | ✅ |
+| AMD Radeon™ RX 6500 XT  | RDNA2  | gfx1034 | Runtime | ✅ |
+| AMD Radeon™ RX 6550S    | RDNA2  | gfx1034 | Runtime | ✅ |
+| AMD Radeon™ RX 6550M    | RDNA2  | gfx1034 | Runtime | ✅ |
+| AMD Radeon™ RX 6500M    | RDNA2  | gfx1034 | Runtime | ✅ |
+| AMD Radeon™ RX 6450M    | RDNA2  | gfx1034 | Runtime | ✅ |
+| AMD Radeon™ RX 6400     | RDNA2  | gfx1034 | Runtime | ✅ |
+| AMD Radeon™ RX 6300     | RDNA2  | gfx1034 | Runtime | ✅ |
+| AMD Radeon™ RX 5700 XT  | RDNA1  | gfx1010 | Runtime | ✅ |
+| AMD Radeon™ RX 5700     | RDNA1  | gfx1010 | Runtime | ✅ |
+| AMD Radeon™ RX 5600 XT  | RDNA1  | gfx1010 | Runtime | ✅ |
+| AMD Radeon™ RX 5500 XT  | RDNA1  | gfx1012 | Runtime | ✅ |
+| AMD Radeon™ VII         | GCN5.1 | gfx906  | Full    | ✅ |
+| AMD Radeon™ RX Vega 64  | GCN5.0 | gfx900  | Full    | ⚠️ |
+| AMD Radeon™ RX Vega 45  | GCN5.0 | gfx900  | Full    | ⚠️ |
+| AMD Radeon™ RX 590      | GCN4.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ RX 580      | GCN4.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ RX 580x     | GCN4.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ RX 570      | GCN4.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ RX 570X     | GCN4.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ RX 570 X2   | GCN4.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ RX 560 XT   | GCN4.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ RX 480      | GCN4.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ RX 470      | GCN4.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ R9 Fury     | GCN3.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ R9 Fury X   | GCN3.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ R9 Fury X2  | GCN3.0 | gfx803  | N/A     | 🆓 |
+| AMD Radeon™ R9 Nano     | GCN3.0 | gfx803  | N/A     | 🆓 |
 
 :::
 
@@ -196,10 +196,11 @@ below:
 :::{tab-item} AMD Instinct™
 :sync: instinct
 
-- Supported - AMD enables these GPUs in our software distributions for the
+- ✅: **Supported** - AMD enables these GPUs in our software distributions for the
   corresponding ROCm product.
-- Deprecated - Support will be removed in a future release.
-- Unsupported - This configuration is not enabled in our software distributions.
+- ⚠️: **Deprecated** - Support will be removed in a future release.
+- ❌: **Unsupported** - This configuration is not enabled in our software
+  distributions.
 
 :::
 
@@ -208,12 +209,13 @@ below:
 
 GPU support levels for Radeon Pro™
 
-- Supported - AMD enables these GPUs in our software distributions for the
+- ✅: **Supported** - AMD enables these GPUs in our software distributions for the
   corresponding ROCm product.
-- Unsupported - This configuration is not enabled in our software distributions.
-- Deprecated - Support will be removed in a future release.
-- Community - AMD does not enable these GPUs in our software distributions but
-  end users are free to enable these GPUs themselves.
+- ⚠️: **Deprecated** - Support will be removed in a future release.
+- ❌: **Unsupported** - This configuration is not enabled in our software
+  distributions.
+- 🆓: **Community** - AMD does not enable these GPUs in our software
+  distributions but end users are free to enable these GPUs themselves.
 
 :::
 

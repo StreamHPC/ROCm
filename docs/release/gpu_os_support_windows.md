@@ -9,7 +9,7 @@
 
 | Device ID | ASIC Name | [LLVM Target](https://www.llvm.org/docs/AMDGPUUsage.html#processors) | Name | HIP Runtime | HIP SDK |
 |:---------:|:---------:|:--------------------------------------------------------------------:|:--------------------------------------------------------------------:|:------------------------------------:|:-----------:|
-| Navi21 Pro-XL  | 73A3 | gfx1030 | AMD Radeon Pro™ W6800   | ✅ | ❌ |
+| Navi21 Pro-XL  | 73A3 | gfx1030 | AMD Radeon Pro™ W6800   | ✅ | ✅ |
 | Navi23 WKS-XL  | 73E3 | gfx1032 | AMD Radeon Pro™ W6600   | ✅ | ❌ |
 
 :::
@@ -33,16 +33,16 @@
 
 | Device ID | ASIC Name | [LLVM Target](https://www.llvm.org/docs/AMDGPUUsage.html#processors) | Name | HIP Runtime | HIP SDK |
 |:---------:|:---------:|:--------------------------------------------------------------------:|:--------------------------------------------------------------------:|:------------------------------------:|:-----------:|
-| Navi21 Pro-XTA | 73A2 | gfx1030 | AMD Radeon™ Graphics    | ✅ | ❌ |
+| Navi21 Pro-XTA | 73A2 | gfx1030 | AMD Radeon™ Graphics    | ✅ | ✅ |
 | Navi21 Pro-XL  | 73A3 | gfx1030 | AMD Radeon Pro™ W6800   | ✅ | ✅ |
-| Navi21 KXTX    | 73A5 | gfx1030 | AMD Radeon™ Graphics    | ✅ | ❌ |
-| Navi21 Pro-XLA | 73AB | gfx1030 | AMD Radeon™ Graphics    | ✅ | ❌ |
+| Navi21 KXTX    | 73A5 | gfx1030 | AMD Radeon™ Graphics    | ✅ | ✅ |
+| Navi21 Pro-XLA | 73AB | gfx1030 | AMD Radeon™ Graphics    | ✅ | ✅ |
 | Navi21 XTXH    | 73AF | gfx1030 | AMD Radeon™ RX 6900 XT  | ✅ | ✅ |
 | Navi21 XL      | 73BF | gfx1030 | AMD Radeon™ RX 6800     | ✅ | ✅ |
 | Navi21 XT      | 73BF | gfx1030 | AMD Radeon™ RX 6800 XT  | ✅ | ✅ |
 | Navi21 XTX     | 73BF | gfx1030 | AMD Radeon™ RX 6900 XT  | ✅ | ✅ |
-| Navi21 XLE     | 73BF | gfx1030 | AMD Radeon™ Graphics    | ✅ | ❌ |
-| Navi21 XB      | 73BF | gfx1030 | AMD Radeon™ Graphics    | ✅ | ❌ |
+| Navi21 XLE     | 73BF | gfx1030 | AMD Radeon™ Graphics    | ✅ | ✅ |
+| Navi21 XB      | 73BF | gfx1030 | AMD Radeon™ Graphics    | ✅ | ✅ |
 | Navi21 GLXL    |      | gfx1030 | AMD Radeon Pro™ V620    | ✅ | ✅ |
 | Navi22 XTLH    | 73DF | gfx1031 | AMD Radeon™ RX 6700 XT  | ✅ | ❌ |
 | Navi22 XTM     | 73DF | gfx1031 | AMD Radeon™ RX 6800M    | ✅ | ❌ |
