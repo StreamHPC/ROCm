@@ -26,22 +26,20 @@
 
 include(FetchContent)
 
-if(BUILD_DOCS)
-  find_package(ROCM 0.11.0 CONFIG QUIET PATHS "${ROCM_PATH}") # First version with Sphinx doc gen improvement
-  if(NOT ROCM_FOUND)
-    message(STATUS "ROCm CMake not found. Fetching...")
-    set(rocm_cmake_tag
-      "c044bb52ba85058d28afe2313be98d9fed02e293" # develop@2023.09.12. (move to 6.0 tag when released)
-      CACHE STRING "rocm-cmake tag to download")
-    FetchContent_Declare(
-      rocm-cmake
-      GIT_REPOSITORY https://github.com/RadeonOpenCompute/rocm-cmake.git
-      GIT_TAG        ${rocm_cmake_tag}
-      SOURCE_SUBDIR "DISABLE ADDING TO BUILD" # We don't really want to consume the build and test targets of ROCm CMake.
-    )
-    FetchContent_MakeAvailable(rocm-cmake)
-    find_package(ROCM CONFIG REQUIRED NO_DEFAULT_PATH PATHS "${rocm-cmake_SOURCE_DIR}")
-  else()
-    find_package(ROCM 0.11.0 CONFIG REQUIRED PATHS "${ROCM_PATH}")
-  endif()
+if(NOT ROCM_EP_UPDATE_DC)
+    find_package(Git REQUIRED)
+endif()
+
+if(ROCM_BUILD_DOCS)
+    include(ROCmSphinxDoc)
+    if(NOT SPHINX_EXECUTABLE)
+        message(FATAL_ERROR
+            "Sphinx executable not found.\n"
+            "Set via SPHINX_EXECUTABLE, CMAKE_PROGRAM_PATH or CMAKE_PREFIX_PATH.")
+    endif()
+    if(NOT DOXYGEN_EXECUTABLE)
+        message(FATAL_ERROR
+            "Doxygen executable not found.\n"
+            "Set via DOXYGEN_EXECUTABLE, CMAKE_PROGRAM_PATH or CMAKE_PREFIX_PATH.")
+    endif()
 endif()

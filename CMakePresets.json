@@ -1,0 +1,391 @@
+{
+	"version": 6,
+	"cmakeMinimumRequired": {
+		"major": 3,
+		"minor": 25,
+		"patch": 0
+	},
+	"include": [
+		"C:\\Users\\mate\\OneDrive\\Develop\\Visual Studio\\CMakeUserPresets-toolchains.json"
+	],
+	"configurePresets": [
+		{
+			"name": "layout-ci",
+			"hidden": true,
+			"binaryDir": "${sourceDir}/build",
+			"installDir": "${sourceDir}/install"
+		},
+		{
+			"name": "cpack-linux-ci",
+			"hidden": true,
+			"cacheVariables": {
+				"CPACK_SOURCE_GENERATOR": "TGZ;DEB",
+				"CPACK_GENERATOR": "TGZ;DEB"
+			}
+		},
+		{
+			"name": "cpack-windows-ci",
+			"hidden": true,
+			"cacheVariables": {
+				"CPACK_SOURCE_GENERATOR": "ZIP",
+				"CPACK_GENERATOR": "ZIP"
+			}
+		},
+		{
+			"name": "generator-ninja-mc-ci",
+			"hidden": true,
+			"generator": "Ninja Multi-Config",
+			"cacheVariables": {
+				"CMAKE_MAKE_PROGRAM": {
+					"type": "FILEPATH",
+					"value": "ninja"
+				}
+			}
+		},
+		{
+			"name": "generator-msbuild-ci",
+			"hidden": true,
+			"generator": "Visual Studio 17 2022",
+			"architecture": {
+				"value": "x64",
+				"strategy": "set"
+			},
+			"environment": {
+				"UseMultiToolTask": "true"
+			}
+		},
+		{
+			"name": "toolchain-msbuild-ci",
+			"hidden": true,
+			"toolset": {
+				"value": "host=x64",
+				"strategy": "set"
+			}
+		},
+		{
+			"name": "dependencies-ci",
+			"hidden": true,
+			"cacheVariables": {
+				"ROCmCMakeBuildTools_ROOT": {
+					"type": "PATH",
+					"value": "${sourceDir}/libs/rocm-cmake"
+				}
+			}
+		},
+		{
+			"name": "project-options-ci",
+			"hidden": true,
+			"cacheVariables": {
+				"ROCM_BUILD_TESTING": false,
+				"ROCM_BUILD_EXAMPLES": false,
+				"ROCM_BUILD_DOCS": true,
+				"ROCM_BUILD_TOOLS": false,
+				"ROCM_DIST_VERSION": "6.0.1"
+			},
+			"environment": {
+				"PATH": "C:\\Program Files\\doxygen\\bin;${sourceDir}\\.venv\\Scripts;$penv{PATH}",
+				"ROCM_DOCS_REMOTE_DETAILS": "https://github.com/valami/mas,doc-cmake"
+			}
+		},
+		{
+			"name": "ninja-mc-linux-ci",
+			"displayName": "Ninja Multi-Config & ROCmCC",
+			"inherits": [
+				"layout-ci",
+				"cpack-linux-ci",
+				"generator-ninja-mc-ci",
+				"dependencies-ci",
+				"project-options-ci"
+			],
+			"condition": {
+				"type": "equals",
+				"lhs": "${hostSystemName}",
+				"rhs": "Linux"
+			},
+			"errors": {
+				"dev": true
+			}
+		},
+		{
+			"name": "ninja-mc-windows-ci",
+			"displayName": "Ninja Multi-Config & ROCmCC",
+			"inherits": [
+				"layout-ci",
+				"cpack-windows-ci",
+				"generator-ninja-mc-ci",
+				"toolchain-makefiles-c/c++-clang-rocm",
+				"dependencies-ci",
+				"project-options-ci"
+			],
+			"condition": {
+				"type": "equals",
+				"lhs": "${hostSystemName}",
+				"rhs": "Windows"
+			},
+			"errors": {
+				"dev": true
+			}
+		},
+		{
+			"name": "msbuild-windows-ci",
+			"displayName": "MSBuild & MSVC",
+			"inherits": [
+				"layout-ci",
+				"cpack-windows-ci",
+				"generator-msbuild-ci",
+				"toolchain-msbuild-ci",
+				"dependencies-ci",
+				"project-options-ci"
+			],
+			"condition": {
+				"type": "equals",
+				"lhs": "${hostSystemName}",
+				"rhs": "Windows"
+			},
+			"errors": {
+				"dev": true
+			}
+		}
+	],
+	"buildPresets": [
+		{
+			"name": "ninja-mc-linux-debug-ci",
+			"displayName": "Debug",
+			"configuration": "Debug",
+			"configurePreset": "ninja-mc-linux-ci"
+		},
+		{
+			"name": "ninja-mc-linux-release-ci",
+			"displayName": "Release",
+			"configuration": "Release",
+			"configurePreset": "ninja-mc-linux-ci"
+		},
+		{
+			"name": "ninja-mc-linux-debug-install-ci",
+			"displayName": "Debug (install)",
+			"configuration": "Debug",
+			"configurePreset": "ninja-mc-linux-ci",
+			"targets": [
+				"install"
+			]
+		},
+		{
+			"name": "ninja-mc-linux-release-install-ci",
+			"displayName": "Release (install)",
+			"configuration": "Release",
+			"configurePreset": "ninja-mc-linux-ci",
+			"targets": [
+				"install"
+			]
+		},
+		{
+			"name": "msbuild-windows-debug-ci",
+			"displayName": "Debug",
+			"configuration": "Debug",
+			"configurePreset": "msbuild-windows-ci"
+		},
+		{
+			"name": "msbuild-windows-release-ci",
+			"displayName": "Release",
+			"configuration": "Release",
+			"configurePreset": "msbuild-windows-ci"
+		},
+		{
+			"name": "msbuild-windows-debug-install-ci",
+			"displayName": "Debug (Install)",
+			"configuration": "Debug",
+			"configurePreset": "msbuild-windows-ci",
+			"targets": [
+				"install"
+			]
+		},
+		{
+			"name": "msbuild-windows-release-install-ci",
+			"displayName": "Release (Install)",
+			"configuration": "Release",
+			"configurePreset": "msbuild-windows-ci",
+			"targets": [
+				"install"
+			]
+		}
+	],
+	"testPresets": [
+		{
+			"name": "ctest-behavior-ci",
+			"hidden": true,
+			"execution": {
+				"noTestsAction": "error",
+				"stopOnFailure": true,
+				"jobs": 3
+			},
+			"output": {
+				"outputOnFailure": true
+			}
+		},
+		{
+			"name": "ninja-mc-linux-debug-ci",
+			"displayName": "Debug",
+			"configuration": "Debug",
+			"configurePreset": "ninja-mc-linux-ci",
+			"inherits": [
+				"ctest-behavior-ci"
+			]
+		},
+		{
+			"name": "ninja-mc-linux-release-ci",
+			"displayName": "Release",
+			"configuration": "Release",
+			"configurePreset": "ninja-mc-linux-ci",
+			"inherits": [
+				"ctest-behavior-ci"
+			]
+		},
+		{
+			"name": "msbuild-windows-debug-ci",
+			"displayName": "Debug",
+			"configuration": "Debug",
+			"configurePreset": "msbuild-windows-ci",
+			"inherits": [
+				"ctest-behavior-ci"
+			]
+		},
+		{
+			"name": "msbuild-windows-release-ci",
+			"displayName": "Release",
+			"configuration": "Release",
+			"configurePreset": "msbuild-windows-ci",
+			"inherits": [
+				"ctest-behavior-ci"
+			]
+		}
+	],
+	"packagePresets": [
+		{
+			"name": "ninja-mc-linux-binary-deb-ci",
+			"displayName": "Binary (DEB)",
+			"configurePreset": "ninja-mc-linux-ci",
+			"configurations": [
+				"Release"
+			],
+			"generators": [
+				"DEB"
+			],
+			"variables": {
+				"CPACK_PACKAGING_INSTALL_PREFIX": "/usr"
+			},
+			"configFile": "${sourceDir}/build/CPackConfig.cmake",
+			"packageDirectory": "${sourceDir}/package"
+		},
+		{
+			"name": "ninja-mc-linux-source-deb-ci",
+			"displayName": "Source (DEB)",
+			"configurePreset": "ninja-mc-linux-ci",
+			"configurations": [
+				"Release"
+			],
+			"generators": [
+				"DEB"
+			],
+			"variables": {
+				"CPACK_INSTALLED_DIRECTORIES": "${sourceDir};/usr/src/rocm",
+				"CPACK_SOURCE_INSTALLED_DIRECTORIES": "${sourceDir};/usr/src/rocm"
+			},
+			"configFile": "${sourceDir}/build/CPackSourceConfig.cmake",
+			"packageDirectory": "${sourceDir}/package"
+		},
+		{
+			"name": "ninja-mc-linux-source-tgz-ci",
+			"displayName": "Source (TGZ)",
+			"configurePreset": "ninja-mc-linux-ci",
+			"configurations": [
+				"Release"
+			],
+			"generators": [
+				"TGZ"
+			],
+			"variables": {
+				"CPACK_PACKAGING_INSTALL_PREFIX": ""
+			},
+			"configFile": "${sourceDir}/build/CPackSourceConfig.cmake",
+			"packageDirectory": "${sourceDir}/package"
+		},
+		{
+			"name": "msbuild-windows-binary-zip-ci",
+			"displayName": "Binary (ZIP)",
+			"configurePreset": "msbuild-windows-ci",
+			"configurations": [
+				"Release"
+			],
+			"generators": [
+				"ZIP"
+			],
+			"variables": {
+				"CPACK_PACKAGING_INSTALL_PREFIX": ""
+			},
+			"configFile": "${sourceDir}/build/CPackConfig.cmake",
+			"packageDirectory": "${sourceDir}/package"
+		},
+		{
+			"name": "msbuild-windows-source-zip-ci",
+			"displayName": "Source (ZIP)",
+			"configurePreset": "msbuild-windows-ci",
+			"configurations": [
+				"Release"
+			],
+			"generators": [
+				"ZIP"
+			],
+			"variables": {
+				"CPACK_PACKAGING_INSTALL_PREFIX": ""
+			},
+			"configFile": "${sourceDir}/build/CPackSourceConfig.cmake",
+			"packageDirectory": "${sourceDir}/package"
+		}
+	],
+	"workflowPresets": [
+		{
+			"name": "ninja-mc-linux-ci",
+			"displayName": "Ninja Multi-Config & GCC",
+			"steps": [
+				{
+					"type": "configure",
+					"name": "ninja-mc-linux-ci"
+				},
+				{
+					"type": "build",
+					"name": "ninja-mc-linux-release-ci"
+				},
+				{
+					"type": "build",
+					"name": "ninja-mc-linux-debug-ci"
+				},
+				{
+					"type": "test",
+					"name": "ninja-mc-linux-release-ci"
+				},
+				{
+					"type": "test",
+					"name": "ninja-mc-linux-debug-ci"
+				},
+				{
+					"type": "build",
+					"name": "ninja-mc-linux-release-install-ci"
+				}
+			]
+		},
+		{
+			"name": "msbuild-windows-ci",
+			"displayName": "MSBuild & MSVC",
+			"steps": [
+				{
+					"type": "configure",
+					"name": "msbuild-windows-ci"
+				},
+				{
+					"type": "build",
+					"name": "msbuild-windows-release-ci"
+				}
+			]
+		}
+	]
+}
