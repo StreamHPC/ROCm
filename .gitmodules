@@ -1,0 +1,8 @@
+[submodule "rocmcmakebuildtools"]
+	path = libs/rocm-cmake
+	url = https://github.com/StreamHPC/rocm-cmake.git
+	branch = super-build
+[submodule "rocprim"]
+	path = libs/rocprim
+	url = https://github.com/StreamHPC/rocPRIM.git
+	branch = super-build
