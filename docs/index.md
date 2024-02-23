@@ -22,10 +22,8 @@ Our documentation is organized into the following categories:
 ::::{grid} 1 2 2 2
 :class-container: rocm-doc-grid
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ./data/banner-installation.jpg
-:img-alt: Install documentation
+:::{grid-item-card} Install
+:class-body: rocm-card-banner rocm-hue-1
 :padding: 2
 
 * Linux
@@ -42,10 +40,8 @@ Our documentation is organized into the following categories:
 * {doc}`ROCm & Spack<rocm-install-on-linux:how-to/spack>`
 :::
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ./data/banner-compatibility.jpg
-:img-alt: Compatibility information
+:::{grid-item-card} Compatibility
+:class-body: rocm-card-banner rocm-hue-4
 :padding: 2
 
 * {doc}`System requirements (Linux)<rocm-install-on-linux:reference/system-requirements>`
@@ -57,10 +53,8 @@ Our documentation is organized into the following categories:
 * {doc}`ROCm on Radeon GPUs<radeon:index>`
 :::
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ./data/banner-reference.jpg
-:img-alt: Reference documentation
+:::{grid-item-card} Reference
+:class-body: rocm-card-banner rocm-hue-7
 :padding: 2
 
 * [API libraries](./reference/api-libraries.md)
@@ -77,10 +71,8 @@ Our documentation is organized into the following categories:
   * System
 :::
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ./data/banner-howto.jpg
-:img-alt: How-to documentation
+:::{grid-item-card} How to
+:class-body: rocm-card-banner rocm-hue-9
 :padding: 2
 
 * [System tuning for various architectures](./how-to/tuning-guides.md)
@@ -93,10 +85,8 @@ Our documentation is organized into the following categories:
 * [GitHub examples](https://github.com/amd/rocm-examples)
 :::
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ./data/banner-conceptual.jpg
-:img-alt: Conceptual documentation
+:::{grid-item-card} Conceptual
+:class-body: rocm-card-banner rocm-hue-12
 :padding: 2
 
 * [GPU architecture](./conceptual/gpu-arch.md)

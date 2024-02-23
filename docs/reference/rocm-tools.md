@@ -11,10 +11,8 @@
 ::::{grid} 1 2 2 2
 :class-container: rocm-doc-grid
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ../data/reference/banner-development.jpg
-:img-alt: Development tools
+:::{grid-item-card} Development
+:class-body: rocm-card-banner rocm-hue-1
 :padding: 2
 
 * {doc}`ROCdbgapi <rocdbgapi:index>`
@@ -23,20 +21,16 @@
 * {doc}`ROCTracer <roctracer:index>`
 :::
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ../data/reference/banner-performance.jpg
-:img-alt: Performance tools
+:::{grid-item-card} Performance
+:class-body: rocm-card-banner rocm-hue-6
 :padding: 2
 
 * {doc}`ROCProfiler <rocprofiler:profiler_home_page>`
 * {doc}`ROCTracer <roctracer:index>`
 :::
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ../data/reference/banner-system.jpg
-:img-alt: System tools
+:::{grid-item-card} System
+:class-body: rocm-card-banner rocm-hue-12
 :padding: 2
 
 * {doc}`AMD SMI <amdsmi:index>`

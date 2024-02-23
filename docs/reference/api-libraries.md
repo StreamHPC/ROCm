@@ -11,10 +11,8 @@
 ::::{grid} 1 2 2 2
 :class-container: rocm-doc-grid
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ../data/reference/banner-ai.jpg
-:img-alt: Artificial intelligence APIs
+:::{grid-item-card} Artificial intelligence
+:class-body: rocm-card-banner rocm-hue-1
 :padding: 2
 
 * {doc}`Composable Kernel <composable_kernel:index>`
@@ -23,10 +21,8 @@
 * {doc}`MIVisionX <mivisionx:doxygen/html/index>`
 :::
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ../data/reference/banner-cpp-primitives.jpg
-:img-alt: C++ primitives
+:::{grid-item-card} C++ primitives
+:class-body: rocm-card-banner rocm-hue-3
 :padding: 2
 
 * {doc}`hipCUB <hipcub:index>`
@@ -35,29 +31,23 @@
 * {doc}`rocThrust <rocthrust:index>`
 :::
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ../data/reference/banner-communication.jpg
-:img-alt: Communication APIs
+:::{grid-item-card} Communication
+:class-body: rocm-card-banner rocm-hue-6
 :padding: 2
 
 * {doc}`RCCL <rccl:index>`
 :::
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ../data/reference/banner-hip.jpg
-:img-alt: HIP APIs
+:::{grid-item-card} HIP
+:class-body: rocm-card-banner rocm-hue-8
 :padding: 2
 
 * {doc}`HIP runtime <hip:index>`
 * {doc}`HIPIFY <hipify:index>`
 :::
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ../data/reference/banner-math.jpg
-:img-alt: Math APIs
+:::{grid-item-card} Math
+:class-body: rocm-card-banner rocm-hue-10
 :padding: 2
 
 * {doc}`hipBLAS <hipblas:index>` / {doc}`rocBLAS <rocblas:index>`
@@ -70,10 +60,8 @@
 * {doc}`rocWMMA <rocwmma:index>`
 :::
 
-:::{grid-item-card}
-:class-card: sd-text-black
-:img-top: ../data/reference/banner-random-number.jpg
-:img-alt: Random number APIs
+:::{grid-item-card} Random numbers
+:class-body: rocm-card-banner rocm-hue-12
 :padding: 2
 
 * {doc}`hipRAND <hiprand:index>`
