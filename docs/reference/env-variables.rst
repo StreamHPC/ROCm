@@ -11,9 +11,9 @@ Environment variables reference
 General overview
 ==========================================
 
-Environment variables effecting the all the libraries in ROCm software stack
+Environment variables that impact libraries in ROCm software stack
 
-.. list-table:: Environment variables effecting the all the libraries in ROCm software stack
+.. list-table:: Environment variables that impact libraries in ROCm software stack
     :header-rows: 1
     :name: clr-env-variables-general-table
 
