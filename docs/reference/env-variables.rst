@@ -25,6 +25,26 @@ Environment variables that impact libraries in ROCm software stack
       - HIP_PLATFORM
       - amd, nvidia
       - The platform where the HIP backend is used. If HIP_PLATFORM is not set, then hipcc will attempt to auto-detect based on if nvcc is found.
+    *
+      - ROCM_BUILD_ID
+      - 
+      - Build ID to identify the release of a given package. End users should not set this.
+    *
+      - ROCM_PATH
+      - /opt/rocm
+      - The path of the installed ROCm software stack.
+    *
+      - HIP_PATH
+      - 
+      - The path of the HIP sdk.
+    *
+      - HIP_DIR
+      - 
+      - The path of the HIP package. Specifically the location of hipConfig.cmake or hip-config.cmake.
+    *
+      - HIP_OFFICIAL_BUILD
+      - 
+      - Enable/Disable for mainline/staging builds. End users should not set this.
 
 ROCm
 ==========================================
@@ -49,6 +69,14 @@ Environment variables effecting the all of the backends of project clr.
       - HIP_PLATFORM
       - amd, nvidia
       - The platform where the HIP backend is used. If HIP_PLATFORM is not set, then hipcc will attempt to auto-detect based on if nvcc is found.
+    *
+      - ROCM_HEADER_WRAPPER_WERROR
+      - ON, OFF
+      - Causes errors to be emitted instead of warnings.
+    *
+      - HSA_DISABLE_CACHE
+      - ON, OFF
+      - Used to disable L2 cache.
 
 Environment variables effecting the opencl backend of project clr.
 
@@ -62,16 +90,12 @@ Environment variables effecting the opencl backend of project clr.
       - Description
     *
       - CPACK_RPM_PACKAGE_RELEASE
-      - amd, nvidia
-      - The platform where the HIP backend is used. If HIP_PLATFORM is not set, then hipcc will attempt to auto-detect based on if nvcc is found.
+      - 1, 2, 3...
+      - This is the numbering of the RPM package itself, i.e. the version of the packaging and not the version of the content.
     *
-      - ROCM_LIBPATCH_VERSION
-      - amd, nvidia
-      - The platform where the HIP backend is used. If HIP_PLATFORM is not set, then hipcc will attempt to auto-detect based on if nvcc is found.
-    *
-      - ROCM_HEADER_WRAPPER_WERROR
-      - amd, nvidia
-      - The platform where the HIP backend is used. If HIP_PLATFORM is not set, then hipcc will attempt to auto-detect based on if nvcc is found.
+      - CPACK_DEBIAN_PACKAGE_RELEASE
+      - 1, 2, 3...
+      - This is the numbering of the Debian package itself, i.e. the version of the packaging and not the version of the content.
 
 
 Environment variables effecting the hipamd backend of project clr.
@@ -85,9 +109,21 @@ Environment variables effecting the hipamd backend of project clr.
       - Values
       - Description
     *
+      - ROCM_LIBPATCH_VERSION
+      - 50000, 60020...
+      - The ROCm version in the format of an integer. The format is MAJOR * 10000 + MINOR * 100 + PATCH
+    *
+      - ROCM_RPATH
       - 
-      - 
-      - 
+      - The rpath for ROCm libraries.
+    *
+      - HIP_FORCE_QUEUE_PROFILING
+      - ON, OFF
+      - Used to run the app as if it were run in rocprof. Forces command queue profiling on by default.
+    *
+      - HSAKMT_DEBUG_LEVEL
+      - 1, 2, ... 7
+      - When set to the highest level, the system will print memory allocation info.
 
 Environment variables effecting the rocclr backend of project clr.
 
@@ -477,7 +513,7 @@ AMD rocclr environment variables at release build:
       - ROC_SYSTEM_SCOPE_SIGNAL
       - bool
       - TRUE
-      - Enable system scope for signals , uses interrupts.
+      - Enable system scope for signals, uses interrupts.
     *
       - GPU_FORCE_QUEUE_PROFILING
       - bool
@@ -608,6 +644,16 @@ AMD rocclr environment variables at release build:
       - bool
       - TRUE
       - Virtual Memory Management Support
+    *
+      - HIPCC_VERBOSE
+      - uint
+      - 0
+      - How much extra info to show during build. E.G: compiler flags, paths.
+    *
+      - ROCPROFILER_REGISTER_ROOT
+      - cstring
+      - 
+      - The path to the rocProfiler.
 
 AMD rocclr environment variables at debug build:
 
